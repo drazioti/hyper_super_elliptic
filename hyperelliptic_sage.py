@@ -1,6 +1,10 @@
 '''
 initial author : K.A.Draziotis (email : drazioti at gmail dot com), August 2022
 
+sage:C([0,1,1],x^4+2*x^3-3*x^2+4*x+4)
+# we are going to solve y^2=(x^3+x+1)*(x^4+2*x^3-3*x^2+4*x+4)
+...[[0, 2], [3, 62], [-1, 2], [-2, 12]]
+
 '''
 
 
@@ -22,7 +26,7 @@ def C(L,g): # L=[A,B,C] : y^2=x^3+Ax^2+Bx+C
     f1 = u^2 - f
     g1 = v^2 - g
     R0 = f1.resultant(g1,x).subs(u=0,v=0)
-    print("Resultant:", R0)
+    #print("Resultant:", R0)
     SF_d = sf_divisors(R0)
     sols = []
 
