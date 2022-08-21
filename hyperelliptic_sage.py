@@ -2,7 +2,7 @@
 initial author : K.A.Draziotis (email : drazioti at gmail dot com), August 2022
 
 sage:C([0,1,1],x^4+2*x^3-3*x^2+4*x+4)
-# we are going to solve y^2=(x^3+x+1)*(x^4+2*x^3-3*x^2+4*x+4)
+# we are going to find the integer points (x,y) on curve y^2=(x^3+x+1)*(x^4+2*x^3-3*x^2+4*x+4), with y>0
 ...[[0, 2], [3, 62], [-1, 2], [-2, 12]]
 
 '''
@@ -57,13 +57,13 @@ def C(L,g): # L=[A,B,C] : y^2=x^3+Ax^2+Bx+C
     SOLS = []
     for z in sols:
         S = H.subs(x=z)
-        if is_square(S):
+        if is_square(S) and S!=0::
             SOLS.append([z,sqrt(S)])
     print SOLS
         
 '''
-sage:C([0,1,2],(x + 40)*(x + 4)*(x - 4)*(x - 7))
-# we are going to solve y^2=x*(x-1)*(x-2)*(x + 40)*(x + 4)*(x - 4)*(x - 7)
+sage:C_([0,1,2],(x + 40)*(x + 4)*(x - 4)*(x - 7))
+# we are going to find integer points on curve y^2=x*(x-1)*(x-2)*(x + 40)*(x + 4)*(x - 4)*(x - 7), with y>0
 ...[[16, 20160], [-7, 2772]]
 
 '''
