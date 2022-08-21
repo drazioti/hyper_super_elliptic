@@ -69,8 +69,8 @@ This curve is fo genus 3.
 
 sage: x,y,z = PolynomialRing(QQ, 3, names='x,y,z').gens()
 sage: F = y^2*z^5 - x*(x-z)*(x-2*z)*(x + 40*z)*(x + 4*z)*(x - 4*z)*(x - 7*z)
-sage: C = Curve(F)
-sage: C.genus()
+sage: Cur = Curve(F)
+sage: Cur.genus()
       3
 
 To find the integer points we execute,
