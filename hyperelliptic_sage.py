@@ -1,9 +1,10 @@
 '''
 initial author : K.A.Draziotis (email : drazioti at gmail dot com), August 2022
 
+We are going to find the integer points (x,y) on curve y^2=(x^3+x+1)*(x^4+2*x^3-3*x^2+4*x+4), with y>0
+
 sage:C([0,1,1],x^4+2*x^3-3*x^2+4*x+4)
-# we are going to find the integer points (x,y) on curve y^2=(x^3+x+1)*(x^4+2*x^3-3*x^2+4*x+4), with y>0
-...[[0, 2], [3, 62], [-1, 2], [-2, 12]]
+     [[0, 2], [3, 62], [-1, 2], [-2, 12]]
 
 '''
 
