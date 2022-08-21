@@ -62,18 +62,22 @@ def C(L,g): # L=[A,B,C] : y^2=x^3+Ax^2+Bx+C
     print SOLS
         
 '''
-We are going to find the integer points on 
-the hyperelliptic curve, defined by the equation 
+We are going to find the integer points on the hyperelliptic curve, defined by the equation 
 y^2=x*(x-1)*(x-2)*(x + 40)*(x + 4)*(x - 4)*(x - 7)
 This curve is fo genus 3.
+
 sage: x,y,z = PolynomialRing(QQ, 3, names='x,y,z').gens()
 sage: F = y^2*z^5 - x*(x-z)*(x-2*z)*(x + 40*z)*(x + 4*z)*(x - 4*z)*(x - 7*z)
 sage: C = Curve(F)
 sage: C.genus()
       3
+
 To find the integer points we execute,
+
 sage:C([0,1,2],(x + 40)*(x + 4)*(x - 4)*(x - 7))
      [[16, 20160], [-7, 2772]]
+
+Here the first argument, which is a list, contains the roots of f(x)
 '''
 
 def C_(L,g): # L=[a1,a2,a3] : y^2=(x-a1)(x-a2)(x-a3)
