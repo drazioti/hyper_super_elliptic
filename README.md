@@ -2,8 +2,8 @@
 
 [GPLv2]: https://img.shields.io/badge/license-GPLv2-lightgrey.svg
 
-The repository contains sagemath files for solving specific quartic hyperelliptic equations.<br/>
-The algorithms based on the paper https://arxiv.org/pdf/2207.10754.pdf
+The repository contains sagemath files for solving hyperelliptic and superelliptic diophantine equations.<br/>
+The algorithms are based on the paper https://arxiv.org/pdf/2207.10754.pdf
 
 **1.py** concerns y^2=(x+a)(x+a+k)(x+b)(x+b+k)<br/>
 **2.py** concerns y^2=c^2x^4+ax^2+b<br/>
