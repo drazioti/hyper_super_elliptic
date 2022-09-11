@@ -67,21 +67,3 @@ def pell_type(g):
                     if b.is_integer() and b>0:
                         L.append([-a,b])
     return L
-
-#for k in range(1,1000):
-#    g = x^2+k*x+1
-#    A = pell_type(g)
-#    if A!=[]:
-#         print A,k
-
-#for k in range(1,1000):
-#    g = x^3+k*x^2+1
-#    A = pell_type(g)
-#    if A!=[]:
-#        print A,k
-
-for k in range(1,1000):
-    g = x*k+3
-    A = pell_type(g)
-    if A!=[]:
-         print A,k
