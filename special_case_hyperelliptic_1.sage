@@ -1,7 +1,8 @@
 '''
 Author : K.A.Draziotis (email : drazioti at gmail dot com), August 2022
 
-We are going to find the integer points (x,y) on curve y^2=(x^4-1)*g(x), g(1),g(-1),g(i),g(-i) non zero.
+We are going to find the integer points (x,y) on curve y^2=(x^4-1)*(kx+3), 1<=k<=1000.
+
 sage:for k in range(1,1000):
 ...      g = x*k+3
 ...      A = pell_type(g)
