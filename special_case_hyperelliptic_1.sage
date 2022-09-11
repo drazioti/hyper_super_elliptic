@@ -36,7 +36,6 @@ def pell_type(g):
     
     L = []
     N = g.subs(x=1)*g.subs(x=-1)*g.subs(x=I)*g.subs(x=-I)
-    #print N
     if N==0:
         return "N=0"
     else:            
@@ -44,7 +43,6 @@ def pell_type(g):
         for d in SF:
             u,v=fundamental_sol(d)
             if u!=[]:
-                #print u,v
                 a=sqrt(u)
                 if a.is_integer():
                     b=sqrt(g.subs(x=a)*(a^4-1))
