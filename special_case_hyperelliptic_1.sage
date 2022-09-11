@@ -7,7 +7,7 @@ sage:for k in range(1,1000):
 ...      g = x*k+3
 ...      A = pell_type(g)
 ...      if A!=[]:
-...          print A,k
+...          print(A,k)
 [[2, 15]] 7
 [[5, 312]] 31
 [[2, 45]] 67
@@ -42,12 +42,14 @@ def pell_type(g):
             if is_squarefree(x):
                 L.append(x)
         return L
+    
+    if g.subs(x=1)==0 or g.subs(x=-1)==0 or g.subs(x=I)==0 or g.subs(x=-I)==0:
+        return "Choose new g"
+    
     L = []
     N = g.subs(x=1)*g.subs(x=-1)*g.subs(x=I)*g.subs(x=-I)
-    #print N
     if N!=0:            
         SF = sf_divisors(int(N))
-        #print SF
         for d in SF:
             u,v=solve_pell(d)
             if u!=None:
