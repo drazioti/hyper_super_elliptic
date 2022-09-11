@@ -1,37 +1,28 @@
 '''
 Author : K.A.Draziotis (email : drazioti at gmail dot com), August 2022
 
-We are going to find the integer points (x,y) on curve y^2=(x^4-1)*(kx+3), 1<=k<=1000.
-
-sage:for k in range(1,1000):
+We are going to find the integer points (x,y) on curve y^2=(x^4-1)*g(x), g(1),g(-1),g(i),g(-i) non zero.
+sage:for k in range(1,100):
 ...      g = x*k+3
 ...      A = pell_type(g)
 ...      if A!=[]:
-...          print(A,k)
-[[2, 15]] 7
-[[5, 312]] 31
-[[2, 45]] 67
-[[5, 468]] 70
-[[10, 3333]] 111
-[[2, 75]] 187
-[[17, 20880]] 307
-[[2, 105]] 367
-[[5, 1092]] 382
-[[5, 1248]] 499
-[[2, 135]] 607
-[[26, 91395]] 703
-[[2, 165]] 907     
+...          print A,k
+    
 '''
 
 def pell_type(g):
-    def solve_pell (N , numTry = 100):
-        cf = continued_fraction( sqrt ( N ))
-        for i in range ( numTry ):
-            denom = cf . denominator ( i )
-            numer = cf . numerator ( i )
-            if numer ^2 - N * denom ^2 == 1:
-                return numer , denom
-        return None , None
+    
+    def fundamental_sol(N):
+        if N==1:
+            return [],[]
+        cf = continued_fraction(sqrt(N))
+        i=1
+        while true:
+            denominator = cf.denominator (i)
+            numerator = cf.numerator (i)
+            i+=1
+            if numerator^2 - N*denominator^2 == 1:
+                return numerator , denominator
         
     def sf_divisors(N):
         if is_prime(N):
@@ -43,16 +34,17 @@ def pell_type(g):
                 L.append(x)
         return L
     
-    if g.subs(x=1)==0 or g.subs(x=-1)==0 or g.subs(x=I)==0 or g.subs(x=-I)==0:
-        return "Choose new g"
-    
     L = []
     N = g.subs(x=1)*g.subs(x=-1)*g.subs(x=I)*g.subs(x=-I)
-    if N!=0:            
+    #print N
+    if N==0:
+        return "N=0"
+    else:            
         SF = sf_divisors(int(N))
         for d in SF:
-            u,v=solve_pell(d)
-            if u!=None:
+            u,v=fundamental_sol(d)
+            if u!=[]:
+                #print u,v
                 a=sqrt(u)
                 if a.is_integer():
                     b=sqrt(g.subs(x=a)*(a^4-1))
