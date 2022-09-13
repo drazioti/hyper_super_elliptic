@@ -4,8 +4,8 @@ initial author : K.A.Draziotis (email : drazioti at gmail dot com), August 2022
 We are going to find the integer points (x,y) on curve y^p=(Ax^p+B)*g(x), with p odd prime
 sage:superelliptic(1,-625,x-1,3) # we solve y^3=(x^3-625)(x-1)
      [[10, 15], [-15, 40], [1, 0]]
-
-
+sage: superelliptic(1,-724,x+2,5) #y^5=(x^5-724)(x+2)
+     [[-2, 0], [5, 7]]
 '''
 
 
