@@ -3,7 +3,9 @@
 [GPLv2]: https://img.shields.io/badge/license-GPLv2-lightgrey.svg
 
 The repository contains sagemath files for solving hyperelliptic and superelliptic diophantine equations.<br/>
-The algorithms are based on the paper https://arxiv.org/abs/2209.07909
+The algorithms are based on the paper Descent methods for studying integer points on $y^n=f(x)g(x), n\ge 2$
+<br>
+https://arxiv.org/abs/2209.07909
 
 **hyperelliptic.sage** concerns $y^2=f(x)g(x)$ where $f(x)$ is a cubic or quartic polynomial<br/>
 **superelliptic.sage** concerns $y^p=(Ax^p+B)g(x)$ where $g(x)$ does not have common roots with $Ax^p+B, p$ prime<br/>
