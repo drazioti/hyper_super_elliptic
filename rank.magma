@@ -1,0 +1,8 @@
+// compute the rank of Jacobian of the hyperelliptic curve C and also the genus
+P<x>:=PolynomialRing(Rationals());
+k := 905;
+C:=HyperellipticCurve(k*x^5 + x^6 + x^4 - k*x - x^2 - 1);
+J:=Jacobian(C);
+//MordellWeilGroup(J);
+RankBounds(J);
+Genus(C);
