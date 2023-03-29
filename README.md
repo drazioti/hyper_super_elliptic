@@ -1,6 +1,7 @@
-![GPLv2][]
-
-[GPLv2]: https://img.shields.io/badge/license-GPLv2-lightgrey.svg
+<p float="left">
+<img src="https://img.shields.io/badge/license-GPLv2-lightgrey.svg" width="80" height="25">
+<img src="https://github.com/sagemath/artwork/blob/master/sage-logo-2018.svg" width="80" height="25"> 
+</p>
 
 The repository contains sagemath files for solving hyperelliptic and superelliptic diophantine equations.<br/>
 The algorithms are based on the paper Descent methods for studying integer points on $y^n=f(x)g(x), n\ge 2$
