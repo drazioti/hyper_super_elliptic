@@ -2,20 +2,14 @@
 Author:K.A.Draziotis
 
 Examples:
-
->p,B,C=5,-72,-162;alpha=3;
+>p,B,C=5,-72,-162;alpha=3; # y^5=(x^3-72)(x^3-162)
 >super(p,alpha,B,C)
-
 [6,6]
 
 >p,B,C=3,-88,-108;alpha=3; # y^3=(x^3-88)(x^3-108)
 >super(p,alpha,B,C)
-
 [[6, 24], [2, 20]]
-
 '''
-
-
 def super(p,alpha,B,C):
     def solver_thue(thue_eq,cons):
         var('x,y')
