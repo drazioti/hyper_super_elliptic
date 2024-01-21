@@ -11,6 +11,17 @@ Examples:
 [[6, 24], [2, 20]]
 '''
 def super(p,alpha,B,C):
+    
+    def sf_divisors(N):
+        if is_prime(N):
+            return [1,N]
+        L = []
+        div = divisors(N)
+        for x in div:
+            if is_squarefree(x):
+                L.append(x)
+        return L
+    
     def solver_thue(thue_eq,cons):
         var('x,y')
         f = thue_eq.subs(y=1)
@@ -107,5 +118,4 @@ def super(p,alpha,B,C):
                         T1.append([s,t])
                 
             
-    print(T1)
     return T1
