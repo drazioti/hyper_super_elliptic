@@ -68,10 +68,8 @@ def super(p,alpha,B,C):
         Th=solver_thue(-d[0]*x^p + d[1]*y^p,B-C) 
         if list(Th)!=[]:
             T.append([Th,d])
-  
-    f = (x^alpha-B)*(x^alpha-C)
-    T1 = [] 
-    #print(T)
+
+    T1 = []
     reset('x')
     f=(x^alpha+B)*(x^alpha+C)
     for z in T:
