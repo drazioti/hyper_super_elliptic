@@ -58,9 +58,10 @@ def C(L,g): # L=[A,B,C] : y^2=x^3+Ax^2+Bx+C
     SOLS = []
     for z in sols:
         S = H.subs(x=z)
-        if is_square(S) and S!=0::
+        if is_square(int(S)) and S!=0:
             SOLS.append([z,sqrt(S)])
-    print SOLS
+    print(SOLS)
+        
         
 '''
 We are going to find the integer points on the hyperelliptic curve, defined by the equation 
@@ -133,4 +134,4 @@ def C_(L,g): # L=[a1,a2,a3] : y^2=(x-a1)(x-a2)(x-a3)
         S = H.subs(x=z)
         if is_square(S) and S!=0:
             SOLS.append([z,sqrt(S)])
-    print SOLS 
+    print(SOLS) 
