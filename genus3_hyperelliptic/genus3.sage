@@ -1,4 +1,7 @@
 R.<x> = PolynomialRing(ZZ)  # Define a polynomial ring over the rationals
+# Below we insert all the polynomials from the list : list.txt
+# This list contains all the genus three hyperelliptic curves with absolute discriminant <10^7 and
+# Jacobian of rank zero.
 L=[]
 with open('list.txt', 'r') as file:
     content = file.read()
@@ -82,7 +85,7 @@ def C(L,g): # L=[A,B,C] : y^2=x^3+Ax^2+Bx+C
 
 
 for i in range(len(d)):
-    if i!=216 and i!=454 and i!=616 and i!=621 and i!=742 and i!=763:
+    if i!=216 and i!=454 and i!=616 and i!=621 and i!=742 and i!=763: # For six curves sagemath failed to compute the integer points
         f=d[i][0]
         a,b,c=f.coefficient(2),f.coefficient(1),f.coefficient(0)
         print(i,"",C( [a,b,c], d[i][1] ))
